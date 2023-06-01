@@ -21,9 +21,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Abc',[
-        "Name" => "Ankit Kumar"
-    ]);
+    return view('landing');
 });
 
 Route::resource('/product',Products::class);
