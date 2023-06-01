@@ -17,3 +17,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/blog-google-calendar
+/backup
+/.well-known
+/.ftpquota
+/.htaccess
+error_log
