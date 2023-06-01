@@ -108,7 +108,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="k-nav-link--icon is-last w-inline-block"><img src="/landing-page-assets/images/user_1.svg" loading="lazy" alt="" class="icon-alone"></a>
+        <a href="/login" class="k-nav-link--icon is-last w-inline-block"><img src="/landing-page-assets/images/user_1.svg" loading="lazy" alt="" class="icon-alone"></a>
       </div>
     </div>
   </div>

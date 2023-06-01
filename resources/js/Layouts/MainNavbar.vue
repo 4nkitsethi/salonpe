@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar navbar-dark navbar-expand-lg navbar-static border-bottom border-bottom-white border-opacity-10">
+    <div class="navbar navbar-dark navbar-expand-lg navbar-static border-bottom border-bottom-white border-opacity-10 adfadf">
 		<div class="container-fluid">
 			<div class="d-flex d-lg-none me-2">
 				<button type="button" class="navbar-toggler sidebar-mobile-main-toggle rounded-pill">
@@ -12,8 +12,7 @@
 
 			<div class="navbar-brand flex-1 flex-lg-0">
 				<a href="index.html" class="d-inline-flex align-items-center">
-					<img src="@/assets/images/logo_icon.svg" alt="">
-					<span class="fs-5 fw-bold ms-2 text-white">SALONE PE</span>
+					<img src="@/assets/images/org/logo.jpeg" alt="" style="height: 32px;">
 				</a>
 			</div>
 

@@ -28,6 +28,6 @@ Route::resource('/product',Products::class);
 Route::resource('/brand',Brands::class);
 Route::resource('/user',Users::class);
 
-Route::get('/dashboard', [Dashboard::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [Dashboard::class, 'dashboard'])->middleware("auth")->name('dashboard');
 
 require __DIR__.'/auth.php';
