@@ -1,6 +1,6 @@
 <template>
     <!-- Page header -->
-    <div class="page-header page-header-light shadow">
+    <div class="page-header page-header-light shadow mb-4">
         <div class="page-header-content d-lg-flex">
             <div class="d-flex">
                 <h4 class="page-title mb-0">

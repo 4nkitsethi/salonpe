@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/welcome', function () {
+    return Inertia::render("Welcome");
+});
+
 Route::resource('/product',Products::class);
 Route::resource('/brand',Brands::class);
 Route::resource('/user',Users::class);

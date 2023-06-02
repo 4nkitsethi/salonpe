@@ -431,3 +431,42 @@
 		</div>
 	</div>
 </template>
+
+<script>
+	export default {
+		mounted(){
+			// Toggle main sidebar
+			const sidebarMainToggle = function() {
+
+				// Elements
+				const sidebarMainElement = document.querySelector('.sidebar-main'),
+	  			sidebarMainRestElements = document.querySelectorAll('.sidebar:not(.sidebar-main):not(.sidebar-component)'),
+	  			sidebarMainDesktopToggler = document.querySelectorAll('.sidebar-main-toggle'),
+	  			sidebarMainMobileToggler = document.querySelectorAll('.sidebar-mobile-main-toggle'),
+	  			sidebarCollapsedClass = 'sidebar-collapsed',
+	  			sidebarMobileExpandedClass = 'sidebar-mobile-expanded';
+
+				// On desktop
+				sidebarMainDesktopToggler.forEach(function(toggler) {
+					toggler.addEventListener('click', function(e) {
+						e.preventDefault();
+						sidebarMainElement.classList.toggle(sidebarCollapsedClass);
+					});                
+				});
+
+				// On mobile
+				sidebarMainMobileToggler.forEach(function(toggler) {
+					toggler.addEventListener('click', function(e) {
+						e.preventDefault();
+						sidebarMainElement.classList.toggle(sidebarMobileExpandedClass);
+						sidebarMainRestElements.forEach(function(sidebars) {
+							sidebars.classList.remove(sidebarMobileExpandedClass);
+						});
+					});                
+				});
+			};
+
+			sidebarMainToggle();
+		}
+	}
+</script>
