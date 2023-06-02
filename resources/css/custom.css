@@ -1,3 +1,2 @@
-.section-bg-light{
-    background: #f7ffff;
-}
+.page-item:first-child .page-link{ width: 94px !important; }
+.page-item:last-child .page-link { width: 70px !important; }

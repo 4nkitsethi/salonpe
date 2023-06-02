@@ -24,6 +24,7 @@ class Products extends Controller
                                 }                  
                             })
                             ->paginate(10)
+                            ->onEachSide(0)
                             ->withQueryString()
                             ->through(fn ($product) => [
                                 'id' => $product->id,

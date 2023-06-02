@@ -24,6 +24,7 @@ class Brands extends Controller
                                 }                  
                             })
                             ->paginate(10)
+                            ->onEachSide(0)
                             ->withQueryString()
                             ->through(fn ($brand) => [
                                 'id' => $brand->id,

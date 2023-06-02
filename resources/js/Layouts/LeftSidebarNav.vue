@@ -1,213 +1,232 @@
 <template>
-    <div class="sidebar sidebar-component sidebar-expand-lg border rounded shadow-sm me-lg-3 mb-3" style="width:18em">
+    <!-- Main sidebar -->
+    <div class="sidebar sidebar-main sidebar-expand-lg align-self-start" style="max-width:17em">
+
         <!-- Sidebar content -->
         <div class="sidebar-content">
-            <!-- Sub navigation -->
+
+            <!-- Sidebar header -->
             <div class="sidebar-section">
-                <div class="collapse show" id="sidebar-navigation">
-                    <ul class="nav nav-sidebar mt-2" data-nav-type="accordion">
-                        <li class="nav-item-header opacity-50">Navigations</li>
-                        <li class="nav-item">
-                            <inertia-link :href="route('dashboard')" class="nav-link" :class="{ 'active': route().current('dashboard') }">
-                                <i class="ph-circles-four me-2"></i>
-                                Dashboard
-                            </inertia-link>
-                        </li>											
-                    </ul>
+                <div class="sidebar-section-body d-flex justify-content-center">
+                    <h5 class="sidebar-resize-hide flex-grow-1 my-auto">Navigation</h5>
+
+                    <div>
+                        <button type="button" class="btn btn-light btn-icon btn-sm rounded-pill border-transparent sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                            <i class="ph-arrows-left-right"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-light btn-icon btn-sm rounded-pill border-transparent sidebar-mobile-main-toggle d-lg-none">
+                            <i class="ph-x"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <!-- /sub navigation -->
+            <!-- /sidebar header -->
 
-            <!-- Product navigation -->
+
+            <!-- Main navigation -->
             <div class="sidebar-section">
-                <div class="sidebar-section-header border-bottom">
-                    <span class="fw-semibold">
-                        <i class="ph-stack"></i>
-                        Product Panel
-                    </span>
-                    <div class="ms-auto">
-                        <a href="#product-navs" class="text-reset" data-bs-toggle="collapse">
-                            <i class="ph-caret-down collapsible-indicator"></i>
+                <ul class="nav nav-sidebar mb-4" data-nav-type="accordion">
+                    <!-- Main -->
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Main</div>
+                        <i class="ph-dots-three sidebar-resize-show"></i>
+                    </li>
+                    <li class="nav-item">                        
+                        <inertia-link :href="route('dashboard')" class="nav-link" :class="{ 'active': route().current('dashboard') }">
+                            <i class="ph-circles-four"></i>
+                            <span>Dashboard</span>
+                        </inertia-link>
+                    </li>
+
+                    <!-- Product Panel -->
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Product Panel</div>
+                        <i class="ph-dots-three sidebar-resize-show"></i>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <inertia-link :href="route('product.index')" class="nav-link" :class="{ 'active': route().current('product.index') }">
+                            <i class="ph-stack-simple"></i>
+                            <span>Products</span>
+                            <span class="badge bg-primary align-self-center rounded-pill ms-auto">{{$page.props.auth.productCount}} Active</span>
+                        </inertia-link>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="ph-tree-structure"></i>
+                            <span>Categories</span>
                         </a>
-                    </div> 
-                </div>
-
-                <div class="collapse section-bg-light show" id="product-navs">
-                    <ul class="nav nav-sidebar mt-2" data-nav-type="accordion">
-                        <li class="nav-item">
-                            <inertia-link :href="route('product.index')" class="nav-link" :class="{ 'active': route().current('product.index') }">
-                                <i class="ph-stack-simple me-2"></i>
-                                Products
-                                <span class="badge bg-success rounded-pill ms-auto">{{$page.props.auth.productCount}} Active</span>
-                            </inertia-link>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-tree-structure me-2"></i>
-                                Categories
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-tree-structure me-2"></i>
-                                Sub Categories
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-tag me-2"></i>
-                                Tags
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="	ph-strategy me-2"></i>
-                                Attributes
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-scales me-2"></i>
-                                Stock Managements
-                            </a>
-                        </li>											
-                    </ul>
-                </div>
-            </div>
-            <!-- /Product navigation -->
-
-            <!-- CMS navigation -->
-            <div class="sidebar-section">
-                <div class="sidebar-section-header border-bottom">
-                    <span class="fw-semibold">
-                        <i class="ph-gear"></i>
-                        CMS Panel
-                    </span>
-                    <div class="ms-auto">
-                        <a href="#cms-navs" class="text-reset" data-bs-toggle="collapse">
-                            <i class="ph-caret-down collapsible-indicator"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="ph-tree-structure"></i>
+                            <span>Sub Categories</span>
                         </a>
-                    </div> 
-                </div>
-
-                <div class="collapse section-bg-light show" id="cms-navs">
-                    <ul class="nav nav-sidebar mt-2" data-nav-type="accordion">
-                        <li class="nav-item">
-                            <inertia-link :href="route('brand.index')" class="nav-link" :class="{ 'active' : route().current('brand.index') }">
-                                <i class="ph-yin-yang me-2"></i>
-                                Brands
-                                <span class="badge bg-success rounded-pill ms-auto">{{$page.props.auth.brandCount}} Active</span>
-                            </inertia-link>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-gear me-2"></i>
-                                CMS Setting
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-gear me-2"></i>
-                                Site Setting
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-wall me-2"></i>
-                                Banners
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-user-focus me-2"></i>
-                                Our Solutions
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-clipboard-text me-2"></i>
-                                Blogs
-                            </a>
-                        </li>											
-                    </ul>
-                </div>
-            </div>
-            <!-- /CMS navigation -->
-
-
-            <!-- Order navigation -->
-            <div class="sidebar-section">
-                <div class="sidebar-section-header border-bottom">
-                    <span class="fw-semibold">
-                        <i class="ph-clipboard-text"></i> 
-                        Order Panel
-                    </span>
-                    <div class="ms-auto">
-                        <a href="#order-navs" class="text-reset" data-bs-toggle="collapse">
-                            <i class="ph-caret-down collapsible-indicator"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="ph-tag"></i>
+                            <span>Tags</span>
                         </a>
-                    </div> 
-                </div>
+                    </li>
 
-                <div class="collapse section-bg-light show" id="order-navs">
-                    <ul class="nav nav-sidebar mt-2" data-nav-type="accordion">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-clipboard me-2"></i>
-                                Orders
-                                <span class="badge bg-primary rounded-pill ms-auto">94 Active</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="ph-star-half me-2"></i>
-                                Rating List
-                            </a>
-                        </li>																					
-                    </ul>
-                </div>
-            </div>
-            <!-- / Order navigation -->
-
-            <!-- Customers navigation -->
-            <div class="sidebar-section">
-                <div class="sidebar-section-header border-bottom">
-                    <span class="fw-semibold">
-                        <i class="ph-user"></i>
-                        Customer Panel
-                    </span>
-                    <div class="ms-auto">
-                        <a href="#customer-navs" class="text-reset" data-bs-toggle="collapse">
-                            <i class="ph-caret-down collapsible-indicator"></i>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="ph-strategy"></i>
+                            <span>Attributes</span>
                         </a>
-                    </div> 
-                </div>
+                    </li>
 
-                <div class="collapse section-bg-light show" id="customer-navs">
-                    <ul class="nav nav-sidebar mt-2" data-nav-type="accordion">
-                        <li class="nav-item">
-                            <inertia-link :href="route('user.index')" class="nav-link" :class="{ 'active' : route().current('user.index') }" >
-                                <i class="ph-users-three me-2"></i>
-                                Users
-                                <span class="badge bg-success rounded-pill ms-auto">{{$page.props.auth.userCount}} Active</span>
-                            </inertia-link>
-                        </li>																					
-                    </ul>
-                </div>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="ph-scales"></i>
+                            <span>Stock Managements</span>
+                        </a>
+                    </li>
+                    
+
+                    <!-- CMS Panel -->
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">CMS Panel</div>
+                        <i class="ph-dots-three sidebar-resize-show"></i>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <inertia-link :href="route('brand.index')" class="nav-link" :class="{ 'active' : route().current('brand.index') }">
+                            <i class="ph-yin-yang"></i>
+                            <span>Brands</span>
+                            <span class="badge bg-primary align-self-center rounded-pill ms-auto">{{$page.props.auth.brandCount}} Active</span>
+                        </inertia-link>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-gear"></i>
+                            <span>CMS Setting</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-gear"></i>
+                            <span>Site Setting</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-wall"></i>
+                            <span>Banners</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-user-focus"></i>
+                            <span>Our Solutions</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-clipboard-text"></i>
+                            <span>Blogs</span>
+                        </a>
+                    </li>	
+
+                    <!-- Order Panel -->
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Order Panel</div>
+                        <i class="ph-dots-three sidebar-resize-show"></i>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-clipboard"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ph-star-half"></i>
+                            <span>Rating List</span>
+                        </a>
+                    </li>                    
+
+                    <!-- Customer Panel -->
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Customer Panel</div>
+                        <i class="ph-dots-three sidebar-resize-show"></i>
+                    </li>
+                    <li class="nav-item">
+                        <inertia-link :href="route('user.index')" class="nav-link" :class="{ 'active' : route().current('user.index') }" >
+                            <i class="ph-users-three"></i>
+                            <span>Users</span>
+                            <span class="badge bg-success rounded-pill ms-auto">{{$page.props.auth.userCount}} Active</span>
+                        </inertia-link>
+                    </li>
+                </ul>
             </div>
-            <!-- / Order navigation -->
+            <!-- /main navigation -->
         </div>
-        <!-- /sidebar content -->
+        <!-- /sidebar content -->			
     </div>
+    <!-- /main sidebar -->
 </template>
 
 <script>
        export default {
-            props : ['auth']
+            props : ['auth'],
+            mounted(){
+                //                 
+                const sidebarMainResize = function() {
+
+                    // Elements
+                    const sidebarMainElement = document.querySelector('.sidebar-main'),
+                    sidebarMainToggler = document.querySelectorAll('.sidebar-main-resize'),
+                    resizeClass = 'sidebar-main-resized',
+                    unfoldClass = 'sidebar-main-unfold';
+
+
+                    // Config
+                    if (sidebarMainElement) {
+
+                        // Define variables
+                        const unfoldDelay = 150;
+                        let timerStart,
+                            timerFinish;
+
+                        // Toggle classes on click
+                        sidebarMainToggler.forEach(function(toggler) {
+                            toggler.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                sidebarMainElement.classList.toggle(resizeClass);
+                                !sidebarMainElement.classList.contains(resizeClass) && sidebarMainElement.classList.remove(unfoldClass);
+                            });                
+                        });
+
+                        // Add class on mouse enter
+                        sidebarMainElement.addEventListener('mouseenter', function() {
+                            clearTimeout(timerFinish);
+                            timerStart = setTimeout(function() {
+                                sidebarMainElement.classList.contains(resizeClass) && sidebarMainElement.classList.add(unfoldClass);
+                            }, unfoldDelay);
+                        });
+
+                        // Remove class on mouse leave
+                        sidebarMainElement.addEventListener('mouseleave', function() {
+                            clearTimeout(timerStart);
+                            timerFinish = setTimeout(function() {
+                                sidebarMainElement.classList.remove(unfoldClass);
+                            }, unfoldDelay);
+                        });
+                    }
+                };
+
+                // 
+                sidebarMainResize();
+            }
        } 
 </script>
 

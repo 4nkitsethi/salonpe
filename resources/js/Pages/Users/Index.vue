@@ -25,7 +25,7 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table table-sm table-striped table-hover">
+                <table class="table table-xs table-striped table-hover">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -45,18 +45,8 @@
                     </tbody>
                 </table>
                 
-                <div  class="d-flex align-items-center p-5">
-                    <ul class="pagination mx-auto" v-if="users.links.length > 3">
-                        <template v-for="(link, key) in users.links">						
-                            <li class="page-item disabled" v-if="link.url === null">
-                                <inertia-link href="#" class="page-link" v-html="link.label"></inertia-link>
-                            </li>						
-                            <li class="page-item" :class="{ 'active': link.active }"  v-else >
-                                <inertia-link :href="link.url" class="page-link" v-html="link.label"></inertia-link>
-                            </li>
-                        </template>
-                    </ul>
-                </div>
+                <!-- Pagination -->
+                <Pagination  :links="users.links" />
             </div>
         </div>		
         <!-- /basic table -->
@@ -68,6 +58,7 @@ import debounce from 'lodash/debounce'
 import pickBy from 'lodash/pickBy'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import moment from 'moment'
+import Pagination from '@/Components/Pagination.vue';
 
 export default {
 	props: {
@@ -85,7 +76,8 @@ export default {
 		}
 	},
     components:{
-        AuthenticatedLayout
+        AuthenticatedLayout,
+        Pagination
     },
 	watch: {
 		form: {

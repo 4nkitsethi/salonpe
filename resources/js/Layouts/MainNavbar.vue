@@ -5,9 +5,6 @@
 				<button type="button" class="navbar-toggler sidebar-mobile-main-toggle rounded-pill">
 					<i class="ph-list"></i>
 				</button>
-				<button type="button" class="navbar-toggler sidebar-mobile-component-toggle rounded-pill">
-					<i class="ph-arrow-down"></i>
-				</button>
 			</div>
 
 			<div class="navbar-brand flex-1 flex-lg-0">

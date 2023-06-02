@@ -51,19 +51,8 @@
                         </tr>					
                     </tbody>
                 </table>
-                
-                <div  class="d-flex align-items-center p-5">
-                    <ul class="pagination mx-auto" v-if="products.links.length > 3">
-                        <template v-for="(link, key) in products.links">						
-                            <li class="page-item disabled" v-if="link.url === null">
-                                <inertia-link href="#" class="page-link" v-html="link.label"></inertia-link>
-                            </li>						
-                            <li class="page-item" :class="{ 'active': link.active }"  v-else >
-                                <inertia-link :href="link.url" class="page-link" v-html="link.label"></inertia-link>
-                            </li>
-                        </template>
-                    </ul>
-                </div>
+                <!-- Pagination -->
+                <Pagination  :links="products.links" />                
             </div>
         </div>		
         <!-- /basic table -->
@@ -75,6 +64,8 @@ import debounce from 'lodash/debounce'
 import pickBy from 'lodash/pickBy'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import moment from 'moment'
+import Pagination from '@/Components/Pagination.vue';
+
 export default {
 	props: {
 		filters: Object,
@@ -91,7 +82,8 @@ export default {
 		}
 	},
     components:{
-        AuthenticatedLayout
+        AuthenticatedLayout,
+        Pagination
     },
 	watch: {
 		form: {

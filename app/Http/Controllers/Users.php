@@ -24,7 +24,8 @@ class Users extends Controller
                                     $query->where($searchBy,'LIKE','%'.$request->search."%");
                                 }                  
                             })
-                            ->paginate(10)
+                            ->paginate(12)
+                            ->onEachSide(0)
                             ->withQueryString()
                             ->through(fn ($user) => [
                                 'id' => $user->id,

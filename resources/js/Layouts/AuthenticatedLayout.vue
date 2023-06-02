@@ -6,7 +6,7 @@
 	    <!-- Page content -->
         <div class="page-content pt-0">
         <!-- Main sidebar -->
-        <LeftSidebarNavs />
+        <LeftSidebarNav />
             <!-- Main content -->
             <div class="content-wrapper">
                 <!-- Content area -->
@@ -31,7 +31,7 @@
 <script>
 import Footer from "./Footer.vue"
 import MainNavbar from "./MainNavbar.vue"
-import LeftSidebarNavs from "./LeftSidebarNavs.vue"
+import LeftSidebarNav from "./LeftSidebarNav.vue"
 import DemoConfig from "./DemoConfig.vue"
 import PageHeader from "./PageHeader.vue"
 import NotificationModal from "./NotificationModal.vue"
@@ -39,7 +39,7 @@ export default {
 	components:{
 		Footer,
         MainNavbar,
-        LeftSidebarNavs,
+        LeftSidebarNav,
         NotificationModal,
         DemoConfig,
         PageHeader
