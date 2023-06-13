@@ -29,6 +29,7 @@ class Brands extends Controller
                             ->through(fn ($brand) => [
                                 'id' => $brand->id,
                                 'name' => $brand->name,
+                                'description' => $brand->description,
                                 'created_at' => $brand->created_at,
                             ]),
         ]); 
@@ -40,6 +41,7 @@ class Brands extends Controller
     public function create()
     {
         //
+        return Inertia::render('Brands/Create');
     }
 
     /**
@@ -47,7 +49,9 @@ class Brands extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        
+        Brand::create($request->all());
+        return redirect()->route('brand.index');
     }
 
     /**
@@ -63,7 +67,9 @@ class Brands extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // 
+        $brand = Brand::find($id);
+        return Inertia::render('Brands/Edit',[ 'brand' => $brand]);
     }
 
     /**
@@ -71,7 +77,9 @@ class Brands extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //        
+        Brand::where("id",$id)->update($request->all());
+        return redirect()->route('brand.index');
     }
 
     /**

@@ -40,6 +40,17 @@ class HandleInertiaRequests extends Middleware
                 'productCount' => Product::count(),
                 'brandCount' => Brand::count()
             ],
+            'quillToolbar' => [
+                                ['bold', 'italic', 'underline', 'strike'], 
+                                ['link', 'blockquote'], 
+                                [[ 'header' => [1, 2, 3, 4, 5, 6, false], ]], 
+                                [[ 'list'=> 'ordered'],  ['list'=> 'bullet' ]] , 
+                                [[ 'script'=> 'sub'] , [ 'script'=> 'super' ]],
+                                [[ 'align' =>  [] ]], 
+                                [[ 'indent' => '-1' ], [ 'indent' => '+1' ]], 
+                                [[ 'color' => [] ], [ 'background' => [] ]],
+                                ['clean'],
+                               ] ,
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
                     'location' => $request->url(),

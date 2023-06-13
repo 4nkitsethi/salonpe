@@ -1,20 +1,25 @@
 import './bootstrap';
 import '../css/app.css';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import '@/assets/js/bootstrap/bootstrap.bundle.min.js';
 import '@/assets/js/vendor/ui/prism.min.js';
+import 'vue-multiselect/dist/vue-multiselect.css';
+import $ from 'jquery';
+window.$ = $;
 
-
+import  '@/assets/js/vendor/uploader/image-uploader.min.js';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp,Link } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueApexCharts from "vue3-apexcharts";
-import { router } from '@inertiajs/vue3'
-import VueLoading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/css/index.css';
-import { useLoading } from 'vue-loading-overlay';
+import { QuillEditor } from '@vueup/vue-quill'
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+import PrimeVue from 'primevue/config';
+import { vMaska } from "maska"
+
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -24,18 +29,11 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue, Ziggy)
             .use(VueApexCharts)
-            .use(VueLoading,{
-                // Pass props by their camelCased names
-                color: '#984346',
-                loader: 'bars',
-                width: 80,
-                height: 80,
-                backgroundColor: '#ffffff',
-                opacity: 0.3,
-                zIndex: 999,
-            })
+            .use(PrimeVue)
             .component('inertia-link',Link)
             .component('apexchart',VueApexCharts)
+            .component('QuillEditor', QuillEditor)
+            .directive("maska", vMaska)
             .mount(el);           
     },
     progress: {

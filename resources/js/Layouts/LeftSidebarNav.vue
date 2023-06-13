@@ -46,7 +46,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <inertia-link :href="route('product.index')" class="nav-link" :class="{ 'active': route().current('product.index') }">
+                        <inertia-link :href="route('product.index')" class="nav-link" :class="{ 'active': $page.url.startsWith('/product') }">
                             <i class="ph-stack-simple"></i>
                             <span>Products</span>
                             <span class="badge bg-primary align-self-center rounded-pill ms-auto">{{$page.props.auth.productCount}} Active</span>
@@ -54,29 +54,32 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link ">
+                        <inertia-link :href="route('category.index')" class="nav-link " :class="{ 'active': $page.url.startsWith('/category') }">
                             <i class="ph-tree-structure"></i>
                             <span>Categories</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link ">
-                            <i class="ph-tree-structure"></i>
-                            <span>Sub Categories</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link ">
-                            <i class="ph-tag"></i>
-                            <span>Tags</span>
-                        </a>
+                        </inertia-link>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link ">
+                        <inertia-link :href="route('sub.category.index')" class="nav-link " :class="{ 'active': $page.url.startsWith('/sub') }">
+                            <i class="ph-tree-structure"></i>
+                            <span>Sub Categories</span>
+                        </inertia-link>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <inertia-link :href="route('tag.index')" class="nav-link " :class="{ 'active': $page.url.startsWith('/tag') }">
+                            <i class="ph-strategy"></i>
+                            <span>Tags</span>
+                        </inertia-link>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <inertia-link :href="route('attribute.index')" class="nav-link " :class="{ 'active': $page.url.startsWith('/attribute') }">
                             <i class="ph-strategy"></i>
                             <span>Attributes</span>
-                        </a>
+                        </inertia-link>
                     </li>
 
                     <li class="nav-item">
@@ -84,7 +87,7 @@
                             <i class="ph-scales"></i>
                             <span>Stock Managements</span>
                         </a>
-                    </li>
+                    </li> -->
                     
 
                     <!-- CMS Panel -->

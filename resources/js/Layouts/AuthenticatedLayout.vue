@@ -1,10 +1,8 @@
 <template>
     	<!-- Main navbar -->
         <MainNavbar />	    
-    	<!-- Page header -->
-        <PageHeader />
 	    <!-- Page content -->
-        <div class="page-content pt-0">
+        <div class="page-content">
         <!-- Main sidebar -->
         <LeftSidebarNav />
             <!-- Main content -->

@@ -186,6 +186,11 @@ return [
         'User' => App\Models\User::class,
         'Brand' => App\Models\Brand::class,
         'Product' => App\Models\Product::class,
+        'Category' => App\Models\Category::class,
+        'ProductType' => App\Models\ProductType::class,
+        'ProductAttribute' => App\Models\ProductAttribute::class,
+        'Media' => App\Models\Media::class,
+        'Tag' => App\Models\Tag::class,
     ])->toArray(),
 
 ];

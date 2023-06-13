@@ -2,8 +2,12 @@
     <AuthenticatedLayout>
         <!-- Basic table -->
         <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">Product List</h5>
+            <div class="card-header d-sm-flex align-items-sm-center py-1">
+                <h5 class="mb-0"> <i class="ph-yin-yang me-1"></i> Product List</h5>
+                <div class="ms-auto">
+                    <inertia-link class="btn btn-link fw-bold me-1"  :href="route('product-type.index')"> <i class="ph-database fw-bold me-1"></i> Product Types  </inertia-link>
+                    <inertia-link class="btn btn-success fw-bold" data-bs-popup="tooltip" title="Create New Product" data-bs-placement="left"  :href="route('product.create')"> <i class="ph-plus fw-bold"></i> </inertia-link>                    
+                </div>
             </div>
 
             <div class="card-body">
@@ -30,11 +34,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Brand</th>
-                            <th>Category</th>
-                            <th>Sub Category</th>
+                            <th>Name</th>                            
                             <th colspan="2">Created At</th>
                         </tr>
                     </thead>
@@ -42,12 +42,8 @@
                         <tr v-for="(product,index) in products.data" :key="product.id">
                             <td>{{ Number(products.from) + (index++) }}</td>
                             <td>{{ product.name }}</td>
-                            <td> {{ product.type }}</td>
-                            <td>{{ product.brand_id }}</td>
-                            <td> {{ product.category_id }}</td>
-                            <td>{{ product.sub_category_id }}</td>
-                            <td><code class="bg-transparent">{{ moment(product.created_at).format('YYYY-MM-DD') }}</code></td>
-                            <td><inertia-link :href="'#'" class="fw-bold"><i class="ph-caret-right fw-bold"></i></inertia-link></td>
+                            <td><code class="bg-transparent">{{ moment(product.created_at).format('YYYY-MM-DD hh:mm A') }}</code></td>
+                            <td><inertia-link :href="route('product.edit',product.id)" class="fw-bold"><i class="ph-caret-right fw-bold"></i></inertia-link></td>
                         </tr>					
                     </tbody>
                 </table>
@@ -92,6 +88,20 @@ export default {
 				this.$inertia.get(this.route('product.index'), pickBy(this.form), { preserveState: true })
 			}, 800),
 		},
-	}
+	},
+    mounted(){
+        const tooltipSelector = document.querySelectorAll('[data-bs-popup="tooltip"]');
+        tooltipSelector.forEach(function(popup) {
+            new bootstrap.Tooltip(popup, {
+                boundary: '.page-content'
+            });
+        });
+    },
+    beforeUnmount(){
+        const tooltipSelectors = document.querySelectorAll('.tooltip');
+        tooltipSelectors.forEach(function(popup) {
+                popup.remove();                                  
+        });
+    }
 }
 </script>

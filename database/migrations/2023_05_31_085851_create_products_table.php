@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->integer("product_id");
-            $table->integer("product_type");
-            $table->string("product_name");
-            $table->integer("brand_id")->nullable();
-            $table->integer("sub_category_id")->nullable();
-            $table->text("main_image")->nullable();
+            $table->string("name");
+            $table->json('product_type')->nullable();            
+            $table->foreignId('brand_id')->nullable()->constrained('brands'); 
+            $table->foreignId('sub_category_id')->nullable()->constrained('categories');              
+            $table->text("thumb_image")->nullable();
             $table->text("product_description")->nullable();
             $table->longText("ingredients")->nullable();
             $table->longText("how_to_use")->nullable();
@@ -26,8 +26,8 @@ return new class extends Migration
             $table->longText("hair_type")->nullable();
             $table->string("firm")->nullable();
             $table->string("Last_CPU_GST")->nullable();
-            $table->text("tag")->nullable();
-            $table->integer("category_id")->nullable();
+            $table->text("tag")->nullable();            
+            $table->foreignId('category_id')->nullable()->constrained('categories');  
             $table->text("slug")->nullable();
             $table->integer("best_offers");
             $table->integer("best_selling");

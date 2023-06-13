@@ -1,2 +1,8 @@
 .page-item:first-child .page-link{ width: 94px !important; }
 .page-item:last-child .page-link { width: 70px !important; }
+::-webkit-scrollbar { height: .5rem; width: .5rem }  
+::-webkit-scrollbar-track { background: #E5E7EB; }  
+::-webkit-scrollbar-thumb { background-color: #6B7280; border-radius: 0.5rem;  border: 3px solid #6B7280;  }
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg{ margin-top: 0 !important}
+.form-check{cursor: pointer;}
+.form-label { font-weight: 500;}
