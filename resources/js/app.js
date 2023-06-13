@@ -8,6 +8,7 @@ import $ from 'jquery';
 window.$ = $;
 
 import  '@/assets/js/vendor/uploader/image-uploader.min.js';
+import  '@/assets/js/vendor/notifications/sweet_alert.min.js';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp,Link } from '@inertiajs/vue3';
