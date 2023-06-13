@@ -120,7 +120,7 @@
                                 <th>Attribute Images</th>
                                 <th>Quantity</th>
                                 <th width="180">
-                                    <inertia-link :href="route('create.product.attribute',2)" class="btn btn-primary btn-sm">
+                                    <inertia-link :href="route('create.product.attribute',this.product.id)" class="btn btn-primary btn-sm">
                                         <i class="ph-plus-circle me-1"></i>
                                         Add Attribute
                                     </inertia-link>
@@ -171,7 +171,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import FileUpload from 'primevue/fileupload';
 import Multiselect from 'vue-multiselect'
 import Uploader from "vue-media-upload";
-import {forEach, includes} from 'lodash';
+import {forEach, includes, isEmpty} from 'lodash';
 
 export default {    
     props:['categories','productTypes','brands','product','tags'],
@@ -247,7 +247,7 @@ export default {
         $('.input-images').imageUploader({                
             maxSize: 2 * 1024 * 1024,
             maxFiles: 1,
-            preloaded:[ { id: 1, src: this.product.thumb_image }]
+            preloaded: ((this.product.thumb_image == '/storage/')) ? [] : [{ id:1,src:this.product.thumb_image}] 
         });        
         //
         document.querySelector('.input-images [type="file"]').addEventListener('change', this.fileChange, false);

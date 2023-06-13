@@ -191,6 +191,8 @@ return [
         'ProductAttribute' => App\Models\ProductAttribute::class,
         'Media' => App\Models\Media::class,
         'Tag' => App\Models\Tag::class,
+        'Setting' => App\Models\Setting::class,
+        'Banner' => App\Models\Banner::class,
     ])->toArray(),
 
 ];

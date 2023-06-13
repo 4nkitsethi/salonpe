@@ -7,6 +7,8 @@ use App\Http\Controllers\Users;
 use App\Http\Controllers\Attributes;
 use App\Http\Controllers\Tags;
 use App\Http\Controllers\Categories;
+use App\Http\controllers\Settings;
+use App\Http\controllers\Banners;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductTypes;
@@ -38,6 +40,12 @@ Route::resource('/category',Categories::class);
 Route::resource('/product-type',ProductTypes::class);
 Route::resource('/attribute',Attributes::class);
 Route::resource('/tag',Tags::class);
+Route::resource('/setting',Settings::class);
+Route::resource('/banner',Banners::class);
+
+Route::get("/setting/edit/{type}",[Settings::class,'settingEdit'])->name("setting.edit.type");
+Route::post("/setting/edit/{type}",[Settings::class,'settingStore'])->name("setting.store.type");
+// 
 Route::get('/sub-category',[Categories::class,'subCategoryIndex'])->name('sub.category.index');
 Route::get('product-attribute/{productId}',[Products::class,'createProductAttribute'])->name('create.product.attribute');
 Route::get('product-attribute/{attributeId}/edit',[Products::class,'editProductAttribute'])->name('edit.product.attribute');

@@ -97,7 +97,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <inertia-link :href="route('brand.index')" class="nav-link" :class="{ 'active' : route().current('brand.index') }">
+                        <inertia-link :href="route('brand.index')" class="nav-link" :class="{ 'active': $page.url.startsWith('/brand') }">
                             <i class="ph-yin-yang"></i>
                             <span>Brands</span>
                             <span class="badge bg-primary align-self-center rounded-pill ms-auto">{{$page.props.auth.brandCount}} Active</span>
@@ -105,22 +105,17 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <inertia-link :href="route('setting.index')" class="nav-link" :class="{ 'active': $page.url.startsWith('/setting') }">
                             <i class="ph-gear"></i>
-                            <span>CMS Setting</span>
-                        </a>
+                            <span>Setting</span>
+                        </inertia-link>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="ph-gear"></i>
-                            <span>Site Setting</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <inertia-link :href="route('banner.index')" class="nav-link" :class="{ 'active': $page.url.startsWith('/banner') }">
                             <i class="ph-wall"></i>
                             <span>Banners</span>
-                        </a>
+                        </inertia-link>
                     </li>
 
                     <li class="nav-item">

@@ -67,31 +67,35 @@ class Products extends Controller
     {  
         //  Skin Type 
         $skinType = collect([]);
-        foreach($request->skinType as $tag){            
-            if($tag['id'] == 0){
-                $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"]] ]);
-                $newTag = [];
-                $newTag = Arr::add($newTag, 'id', $tagDB->id);  
-                $newTag = Arr::add($newTag, 'name', $tagDB->name);                
-                $skinType->push($newTag);
-            }else{
-                $skinType->push($tag);
-            }
-        }        
+        if(!empty($request->skinType)){
+            foreach($request->skinType as $tag){            
+                if($tag['id'] == 0){
+                    $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"]] ]);
+                    $newTag = [];
+                    $newTag = Arr::add($newTag, 'id', $tagDB->id);  
+                    $newTag = Arr::add($newTag, 'name', $tagDB->name);                
+                    $skinType->push($newTag);
+                }else{
+                    $skinType->push($tag);
+                }
+            }   
+        }     
 
         //  Hair Type 
         $hairType = collect([]);
-        foreach($request->hairType as $tag){            
-            if($tag['id'] == 0){
-                $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"] ] ]);
-                $newTag = [];
-                $newTag = Arr::add($newTag, 'id', $tagDB->id);  
-                $newTag = Arr::add($newTag, 'name', $tagDB->name);                
-                $hairType->push($newTag);
-            }else{
-                $hairType->push($tag);
-            }
-        }        
+        if(!empty($request->hairType)){
+            foreach($request->hairType as $tag){            
+                if($tag['id'] == 0){
+                    $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"] ] ]);
+                    $newTag = [];
+                    $newTag = Arr::add($newTag, 'id', $tagDB->id);  
+                    $newTag = Arr::add($newTag, 'name', $tagDB->name);                
+                    $hairType->push($newTag);
+                }else{
+                    $hairType->push($tag);
+                }
+            }        
+        }
         //        
         $data = [
                     "name" => $request->name ,
@@ -153,31 +157,36 @@ class Products extends Controller
         //
         //  Skin Type 
         $skinType = collect([]);
-        foreach($request->skinType as $tag){            
-            if($tag['id'] == 0){
-                $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"]] ]);
-                $newTag = [];
-                $newTag = Arr::add($newTag, 'id', $tagDB->id);  
-                $newTag = Arr::add($newTag, 'name', $tagDB->name);                
-                $skinType->push($newTag);
-            }else{
-                $skinType->push($tag);
-            }
-        }        
+        if(!empty($request->skinType)){
+            foreach($request->skinType as $tag){            
+                if($tag['id'] == 0){
+                    $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"]] ]);
+                    $newTag = [];
+                    $newTag = Arr::add($newTag, 'id', $tagDB->id);  
+                    $newTag = Arr::add($newTag, 'name', $tagDB->name);                
+                    $skinType->push($newTag);
+                }else{
+                    $skinType->push($tag);
+                }
+            } 
+        }
+               
 
         //  Hair Type 
         $hairType = collect([]);
-        foreach($request->hairType as $tag){            
-            if($tag['id'] == 0){
-                $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"] ] ]);
-                $newTag = [];
-                $newTag = Arr::add($newTag, 'id', $tagDB->id);  
-                $newTag = Arr::add($newTag, 'name', $tagDB->name);                
-                $hairType->push($newTag);
-            }else{
-                $hairType->push($tag);
-            }
-        }  
+        if(!empty($request->hairType)){
+            foreach($request->hairType as $tag){            
+                if($tag['id'] == 0){
+                    $tagDB = Tag::create([ "name" => $tag["name"] , "category" => [(int) $request->category["id"] ] ]);
+                    $newTag = [];
+                    $newTag = Arr::add($newTag, 'id', $tagDB->id);  
+                    $newTag = Arr::add($newTag, 'name', $tagDB->name);                
+                    $hairType->push($newTag);
+                }else{
+                    $hairType->push($tag);
+                }
+            }  
+        }
 
         //        
         $data = [

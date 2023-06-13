@@ -127,8 +127,7 @@ export default {
 		}
 	},
     methods:{
-                saveProduct(){     
-                            console.log(this.form.product)                                           
+                saveProduct(){                                              
                             this.form.product.post(this.route('product.store'));                            
                 },
                 nameWithLang ({ name, created_at }) {

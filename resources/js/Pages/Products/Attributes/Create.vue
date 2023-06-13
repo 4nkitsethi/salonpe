@@ -136,7 +136,7 @@
                         </div>
                     </div>                    
                     <hr />
-                    <inertia-link :href="route('product.edit',2)" class="btn btn-danger me-2 px-5">Return Back</inertia-link>
+                    <inertia-link :href="route('product.edit',product.id)" class="btn btn-danger me-2 px-5">Return Back</inertia-link>
                     <button type="submit" class="btn btn-primary">Associate Attribute To Product</button>
                 </form>
             </div>
@@ -211,9 +211,12 @@ export default {
     },
     mounted(){
         let preloaded = [];
-        forEach(this.attribute.media , (item) => {
-            preloaded.push(mapKeys(item,(v,k) => { if(k == 'path') return "src"; return k;  }))
-        });
+        if(!isEmpty(this.attribute)){
+            forEach(this.attribute.media , (item) => {
+                preloaded.push(mapKeys(item,(v,k) => { if(k == 'path') return "src"; return k;  }))
+            });
+        }
+        
         
         $('.attribute-images').imageUploader({                
             maxSize: 2 * 1024 * 1024,
