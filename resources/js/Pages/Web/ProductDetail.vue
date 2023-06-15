@@ -31,43 +31,43 @@
                         >
                         <div class="row row-cols-2 g-3">
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/01.jpg">
-                                <img src="../../assets/web/images/product-images/01.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG01JPG">
+                                <img src="@/assets/web/images/product-images/01.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/02.jpg">
-                                <img src="../../assets/web/images/product-images/02.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG02JPG">
+                                <img src="@/assets/web/images/product-images/02.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/03.jpg">
-                                <img src="../../assets/web/images/product-images/03.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG03JPG">
+                                <img src="@/assets/web/images/product-images/03.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/04.jpg">
-                                <img src="../../assets/web/images/product-images/04.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG04JPG">
+                                <img src="@/assets/web/images/product-images/04.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/05.jpg">
-                                <img src="../../assets/web/images/product-images/05.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG05JPG">
+                                <img src="@/assets/web/images/product-images/05.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/06.jpg">
-                                <img src="../../assets/web/images/product-images/06.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG06JPG">
+                                <img src="@/assets/web/images/product-images/06.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/07.jpg">
-                                <img src="../../assets/web/images/product-images/07.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG07JPG">
+                                <img src="@/assets/web/images/product-images/07.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                             <div class="col">
-                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" data-src="../../assets/web/images/product-images/08.jpg">
-                                <img src="../../assets/web/images/product-images/08.jpg" class="img-fluid" alt="">
+                            <div class="img-thumb-container overflow-hidden position-relative" data-fancybox="gallery" :data-src="IMG08JPG">
+                                <img src="@/assets/web/images/product-images/08.jpg" class="img-fluid" alt="">
                             </div>
                             </div>
                         </div><!--end row-->
@@ -501,7 +501,28 @@
 <script>
 import WebLayout from '@/Layouts/WebLayout.vue';
 import Fancybox from "./Fancybox.vue";
+import IMG01JPG from '@/assets/web/images/product-images/01.jpg'
+import IMG02JPG from '@/assets/web/images/product-images/02.jpg'
+import IMG03JPG from '@/assets/web/images/product-images/03.jpg'
+import IMG04JPG from '@/assets/web/images/product-images/04.jpg'
+import IMG05JPG from '@/assets/web/images/product-images/05.jpg'
+import IMG06JPG from '@/assets/web/images/product-images/06.jpg'
+import IMG07JPG from '@/assets/web/images/product-images/07.jpg'
+import IMG08JPG from '@/assets/web/images/product-images/08.jpg'
+
 export default {	
+    data(){
+             return {
+                        IMG01JPG,
+                        IMG02JPG,
+                        IMG03JPG,
+                        IMG04JPG,
+                        IMG05JPG,
+                        IMG06JPG,
+                        IMG07JPG,
+                        IMG08JPG
+             }
+    },
     components:{
         WebLayout,
         Fancybox
