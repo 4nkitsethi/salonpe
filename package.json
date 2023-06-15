@@ -19,6 +19,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@fancyapps/ui": "^5.0.19",
         "@vueup/vue-quill": "^1.2.0",
         "apexcharts": "^3.40.0",
         "gridjs-vue": "^5.0.4",

@@ -123,4 +123,20 @@ class Categories extends Controller
                                 ]),
         ]);  
     }
+
+    public function subCategoryCreate(){
+        $categories = Category::whereNull("parent_id")->get();
+        return Inertia::render('Categories/Sub/Create',["categories" => $categories]);
+    }
+
+
+    public function subCategoryStore(Request $request){
+        $data = [
+                    "name" => $request->name,
+                    "parent_id" => $request->parent_id["id"]
+        ];
+        //  
+        Category::create($data);
+        return redirect()->route('sub.category.index'); 
+    }
 }

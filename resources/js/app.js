@@ -9,6 +9,7 @@ window.$ = $;
 
 import  '@/assets/js/vendor/uploader/image-uploader.min.js';
 import  '@/assets/js/vendor/notifications/sweet_alert.min.js';
+import '@/assets/js/vendor/slick/slick.min.js';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp,Link } from '@inertiajs/vue3';
@@ -20,6 +21,7 @@ import { QuillEditor } from '@vueup/vue-quill'
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 import PrimeVue from 'primevue/config';
 import { vMaska } from "maska"
+
 
 
 createInertiaApp({

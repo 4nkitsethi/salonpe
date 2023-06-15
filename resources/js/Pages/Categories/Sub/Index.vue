@@ -5,7 +5,7 @@
             <div class="card-header d-sm-flex align-items-sm-center py-1">
                 <h5 class="mb-0"> <i class="ph-tree-structure me-1"></i> Sub Category List</h5>
                 <div class="ms-auto">
-                    <inertia-link class="btn btn-success fw-bold" data-bs-popup="tooltip" title="Create New Category" data-bs-placement="left"  :href="route('category.create')"> <i class="ph-plus fw-bold"></i> </inertia-link>
+                    <inertia-link class="btn btn-success fw-bold" data-bs-popup="tooltip" title="Create New Sub Category" data-bs-placement="left"  :href="route('sub.category.create')"> <i class="ph-plus fw-bold"></i> </inertia-link>
                 </div>
             </div>
 

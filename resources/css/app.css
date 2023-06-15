@@ -1,7 +1,9 @@
-@import 'all.min.css';
 @import '../js/assets/icons/phosphor/styles.min.css';
 @import 'custom.css';
 @import "primevue/resources/themes/lara-light-indigo/theme.css";     
 @import "primevue/resources/primevue.min.css";
 @import 'primeicons/primeicons.css';
 @import '../js/assets/js/vendor/uploader/image-uploader.min.css';
+@import '../js/assets/js/vendor/slick/slick.css';
+@import '../js/assets/js/vendor/slick/slick-theme.css';
+@import "../js/assets/css/style.css";

@@ -25,6 +25,9 @@
 	<!-- /demo config -->
 </template>
 
+<style>
+    @import '@/assets/css/all.min.css';
+</style>
 
 <script>
 import Footer from "./Footer.vue"

@@ -6,3 +6,8 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <slot />
 </template>
+
+
+<style>
+    @import '@/assets/css/all.min.css';
+</style>
